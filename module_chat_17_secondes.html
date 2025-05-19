@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module IA 17 secondes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #0e0e0e;
+      color: #ffffff;
+    }
+    .chat-module {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #0a0a0a, #1f1f1f);
+      padding: 2rem;
+    }
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .chat-header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.85; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .chat-body {
+      flex: 1;
+      margin-top: 2rem;
+      background: #171717;
+      border-radius: 12px;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+    .chat-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .language-note {
+      font-size: 0.9rem;
+      color: #bbbbbb;
+    }
+    input[type="text"] {
+      padding: 1rem;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      background: #dca763;
+      color: #0e0e0e;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-module">
+    <div class="chat-header">
+      <img src="IA17.png" alt="IA Logo" />
+      <div>
+        <h2>Explorateur 17 secondes</h2>
+        <p>Un copilote pour clarifier vos idées</p>
+      </div>
+    </div>
+
+    <div class="chat-body">
+      <p><strong>Assistant :</strong><br>
+      Bonjour et bienvenue chez 17 secondes — Welcome to 17 secondes.<br>
+      Qu’est-ce qui vous amène aujourd’hui ? Une idée, une curiosité, un projet à structurer ?<br>
+      💬 Parlez dans la langue de votre choix — je m’adapte. / Speak in the language of your choice — I’ll adapt.</p>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" placeholder="Écrivez votre message ici / Type your message here..." />
+      <span class="language-note">💬 Parlez dans la langue de votre choix — je m’adapte.</span>
+      <button>Recommencer l’échange</button>
+    </div>
+  </div>
+</body>
+</html>
