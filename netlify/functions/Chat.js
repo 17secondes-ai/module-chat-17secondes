@@ -29,7 +29,6 @@ exports.handler = async (event) => {
     };
   } catch (error) {
     console.error("Erreur GPT :", error);
-
     return {
       statusCode: 500,
       body: JSON.stringify({ reply: "❗Erreur lors de l'appel à GPT." })

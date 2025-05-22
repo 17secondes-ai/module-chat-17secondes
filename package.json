@@ -1,0 +1,14 @@
+{
+  "name": "17secondes-chat",
+  "version": "1.0.0",
+  "description": "Dialogue IA stratégique avec GPT-4 pour 17 secondes",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo 'Netlify build environment'"
+  },
+  "author": "Gildas Dussauze",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
