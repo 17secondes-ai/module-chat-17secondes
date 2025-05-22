@@ -68,6 +68,7 @@
       });
 
       const data = await response.json();
+      console.log("Réponse API GPT : ", data);
       appendMessage('assistant', data.reply);
     }
 
