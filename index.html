@@ -1,84 +1,56 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dialogue IA — 17 secondes</title>
+  <title>Test IA 17 secondes</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
+      font-family: Helvetica, sans-serif;
       background: #0e0e0e;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      color: #fff;
       padding: 2rem;
     }
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
     #chat {
-      width: 100%;
-      max-width: 800px;
-      background-color: #1a1a1a;
+      background: #1a1a1a;
+      border-radius: 10px;
       padding: 1rem;
-      border-radius: 12px;
-      height: 70vh;
+      height: 300px;
       overflow-y: auto;
       margin-bottom: 1rem;
     }
-    .message {
-      margin: 1rem 0;
-    }
-    .user {
-      color: #dca763;
-    }
-    .assistant {
-      color: #ffffff;
-    }
-    #user-input {
-      display: flex;
-      gap: 0.5rem;
-      width: 100%;
-      max-width: 800px;
-    }
+    .message { margin: 0.5rem 0; }
+    .user { color: #dca763; }
+    .assistant { color: #ffffff; }
     #message {
-      flex-grow: 1;
       padding: 1rem;
-      border-radius: 8px;
-      border: none;
+      width: 70%;
       font-size: 1rem;
     }
     #send {
       padding: 1rem;
-      border-radius: 8px;
-      border: none;
       background: #dca763;
-      color: #0e0e0e;
+      border: none;
       font-weight: bold;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Explorateur IA — 17 secondes</h1>
+  <h1>Explorateur IA – 17 secondes</h1>
   <div id="chat"></div>
-  <div id="user-input">
-    <input type="text" id="message" placeholder="Posez votre question..." />
-    <button id="send">Envoyer</button>
-  </div>
+  <input type="text" id="message" placeholder="Tape ton message ici…" />
+  <button id="send">Envoyer</button>
 
   <script>
     const chat = document.getElementById('chat');
     const input = document.getElementById('message');
-    const send = document.getElementById('send');
+    const sendBtn = document.getElementById('send');
 
     function appendMessage(role, content) {
       const div = document.createElement('div');
-      div.className = `message ${role}`;
-      div.innerText = `${role === 'user' ? '👤 Vous' : '🤖 Explorateur'} : ${content}`;
+      div.classList.add('message', role);
+      div.innerText = `${role === 'user' ? '👤 Vous' : '🤖 IA'} : ${content}`;
       chat.appendChild(div);
       chat.scrollTop = chat.scrollHeight;
     }
@@ -99,8 +71,8 @@
       appendMessage('assistant', data.reply);
     }
 
-    send.addEventListener('click', sendMessage);
-    input.addEventListener('keydown', e => {
+    sendBtn.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') sendMessage();
     });
   </script>
