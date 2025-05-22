@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module IA 17 secondes</title>
+  <title>Explorateur IA — 17 secondes</title>
   <style>
     body {
       margin: 0;
@@ -14,7 +14,7 @@
     .chat-module {
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      min-height: 100vh;
       background: linear-gradient(to bottom right, #0a0a0a, #1f1f1f);
       padding: 2rem;
     }
@@ -34,39 +34,18 @@
       50% { transform: scale(1.05); opacity: 0.85; }
       100% { transform: scale(1); opacity: 1; }
     }
-    .chat-body {
-      flex: 1;
+    .chat-intro {
       margin-top: 2rem;
-      background: #171717;
-      border-radius: 12px;
-      padding: 2rem;
-      overflow-y: auto;
-    }
-    .chat-footer {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .language-note {
-      font-size: 0.9rem;
-      color: #bbbbbb;
-    }
-    input[type="text"] {
-      padding: 1rem;
-      border-radius: 8px;
-      border: none;
-      width: 100%;
       font-size: 1rem;
+      color: #dddddd;
     }
-    button {
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
+    iframe {
+      margin-top: 2rem;
+      width: 100%;
+      height: 80vh;
       border: none;
-      background: #dca763;
-      color: #0e0e0e;
-      font-weight: bold;
-      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(220, 167, 99, 0.2);
     }
   </style>
 </head>
@@ -80,18 +59,16 @@
       </div>
     </div>
 
-    <div class="chat-body">
-      <p><strong>Assistant :</strong><br>
-      Bonjour et bienvenue chez 17 secondes — Welcome to 17 secondes.<br>
-      Qu’est-ce qui vous amène aujourd’hui ? Une idée, une curiosité, un projet à structurer ?<br>
-      💬 Parlez dans la langue de votre choix — je m’adapte. / Speak in the language of your choice — I’ll adapt.</p>
+    <div class="chat-intro">
+      <p>💬 Bienvenue dans l’espace de dialogue stratégique de 17 secondes.<br>
+      Ce module IA vous aide à structurer vos projets, affiner vos priorités, et préparer un premier cadrage activable.<br>
+      Parlez dans la langue de votre choix — l’IA s’adapte.</p>
     </div>
 
-    <div class="chat-footer">
-      <input type="text" placeholder="Écrivez votre message ici / Type your message here..." />
-      <span class="language-note">💬 Parlez dans la langue de votre choix — je m’adapte.</span>
-      <button>Recommencer l’échange</button>
-    </div>
+    <iframe 
+      src="https://chatgpt.com/g/g-682b32d9e5d081919e59bacf701b348f-explorateur-17-secondes" 
+      allow="clipboard-write; microphone;">
+    </iframe>
   </div>
 </body>
 </html>
