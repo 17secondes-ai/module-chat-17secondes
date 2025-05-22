@@ -19,9 +19,16 @@ exports.handler = async (event) => {
     });
 
     const data = await response.json();
-    console.log("Réponse brute GPT :", data);
+console.log("Réponse brute GPT :", JSON.stringify(data, null, 2));
 
-    const reply = data.choices?.[0]?.message?.content || "Réponse non disponible.";
+let reply;
+
+if (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
+  reply = data.choices[0].message.content;
+} else {
+  reply = "❗Réponse GPT vide ou erreur. Vérifie ta clé ou ton modèle.";
+  console.error("⚠️ Réponse inattendue d'OpenAI :", data);
+}
 
     return {
       statusCode: 200,
@@ -31,7 +38,7 @@ exports.handler = async (event) => {
     console.error("Erreur GPT :", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ reply: "❗Erreur lors de l'appel à GPT." })
+      body: JSON.stringify({ reply: "❗Erreur GPT : " + error.message })
     };
   }
 };
