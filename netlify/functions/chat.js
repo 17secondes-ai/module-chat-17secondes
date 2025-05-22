@@ -19,7 +19,7 @@ exports.handler = async (event) => {
     });
 
     const data = await response.json();
-console.log("Réponse brute GPT :", JSON.stringify(data, null, 2));
+console.log("🔑 Clé API détectée :", OPENAI_API_KEY ? "Oui" : "Non");
 
 let reply;
 
