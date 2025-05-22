@@ -11,6 +11,7 @@
       background: #0e0e0e;
       color: #ffffff;
     }
+
     .chat-module {
       display: flex;
       flex-direction: column;
@@ -18,34 +19,63 @@
       background: linear-gradient(to bottom right, #0a0a0a, #1f1f1f);
       padding: 2rem;
     }
+
     .chat-header {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
+
     .chat-header img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
       0% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.05); opacity: 0.85; }
       100% { transform: scale(1); opacity: 1; }
     }
+
     .chat-intro {
       margin-top: 2rem;
       font-size: 1rem;
       color: #dddddd;
     }
-    iframe {
-      margin-top: 2rem;
-      width: 100%;
-      height: 80vh;
+
+    .cta-section {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .cta-button {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      background-color: #dca763;
+      color: #0e0e0e;
+      font-weight: bold;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(220, 167, 99, 0.2);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #f5c57e;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
@@ -60,15 +90,23 @@
     </div>
 
     <div class="chat-intro">
-      <p>💬 Bienvenue dans l’espace de dialogue stratégique de 17 secondes.<br>
+      <p>💬 Bienvenue dans l’espace de dialogue stratégique de <strong>17 secondes</strong>.<br>
       Ce module IA vous aide à structurer vos projets, affiner vos priorités, et préparer un premier cadrage activable.<br>
       Parlez dans la langue de votre choix — l’IA s’adapte.</p>
     </div>
 
-    <iframe 
-      src="https://chatgpt.com/g/g-682b32d9e5d081919e59bacf701b348f-explorateur-17-secondes" 
-      allow="clipboard-write; microphone;">
-    </iframe>
+    <div class="cta-section">
+      <a class="cta-button" href="https://chatgpt.com/g/g-682b32d9e5d081919e59bacf701b348f-explorateur-17-secondes" target="_blank">
+        🎯 Lancer le dialogue avec notre IA stratégique
+      </a>
+      <a class="cta-button" href="https://calendly.com/gdussauze-17secondes/meeting30" target="_blank">
+        📅 Planifier un rendez-vous stratégique
+      </a>
+    </div>
+
+    <footer>
+      © 17 secondes — IA augmentée par la vision humaine
+    </footer>
   </div>
 </body>
 </html>
